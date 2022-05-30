@@ -96,7 +96,7 @@ require_once 'vendor/autoload.php';
 Next, there’s a configuration section, which initializes the application configuration by setting up the necessary settings. Of course, you need to replace the placeholders with your corresponding values.
 
 ```php
-// Init Configuration
+// init configuration
 $clientID = '<YOUR_CLIENT_ID>';
 $clientSecret = '<YOUR_CLIENT_SECRET>';
 $redirectUri = '<REDIRECT_URI>';
@@ -122,7 +122,7 @@ $client->addScope("profile");
 Finally, we have a piece of code which does the login flow magic.
 
 ```php
-// Authenticate code from Google OAuth Flow
+// authenticate code from Google OAuth Flow
 if (isset($_GET['code'])) {
   $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
   $client->setAccessToken($token['access_token']);
